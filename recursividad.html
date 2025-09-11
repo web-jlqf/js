@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo de factorial en JavaScript</title>
+</head>
+<body>
+  <p></p>
+
+  <script>
+    /* =====================
+       Declaración de funciones
+       ===================== */
+    
+    // Función recursiva para calcular el factorial
+    function factorial(n) {
+      // Caso base: si n es 0 o 1, el factorial es 1
+      if (n === 0 || n === 1) {
+        return 1;
+      }
+      // Caso recursivo: n * factorial(n-1)
+      return n * factorial(n - 1);
+    }
+
+    /* =====================
+       Uso de la función
+       ===================== */
+
+    // Pedir número al usuario
+    let n = prompt("Ingresa un número");
+
+    // Convertir a entero
+    n = parseInt(n);
+
+    // Calcular factorial
+    let r = factorial(n);
+
+    // Mostrar resultado
+    alert(r);
+  </script>
+</body>
+</html>

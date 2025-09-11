@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo con funciones en JavaScript</title>
+</head>
+<body>
+  <p></p>
+
+  <script>
+    /* =====================
+       Declaración de funciones
+       ===================== */
+
+    // Resta con parámetros explícitos
+    function resta(a, b) {
+      return a - b;
+    }    
+
+    // Suma con acceso a todos los argumentos mediante "arguments"
+    function suma() {
+      console.log("#Argumentos: " + arguments.length);
+      console.log("Argumento 1: " + arguments[0]);
+      console.log("Argumento 2: " + arguments[1]);
+      console.log("Argumento 3: " + arguments[2]);
+
+      //  Si son cadenas, se concatenan
+      console.log("Resultado suma: " + (arguments[0] + arguments[1]));
+    }  
+
+    // Multiplicación con valores por defecto
+    function multiplicacion(a = 5, b = 20) {
+      console.log("Multiplicación: " + a * b);
+    }  
+
+    /* =====================
+       Uso de las funciones
+       ===================== */
+
+    // Pedir dos valores por teclado (prompt devuelve cadenas)
+    let op1 = prompt("Ingresa un número");
+    let op2 = prompt("Ingresa un número");
+
+    console.log("Operadores: " + op1 + " , " + op2);
+
+    // Conversión de cadenas a enteros
+    let intOp1 = parseInt(op1);
+    let intOp2 = parseInt(op2);         
+
+    // Uso de la función resta
+    let r = resta(intOp1, intOp2);
+    console.log("Resultado resta: " + r);
+
+    // Llamadas a la función suma con diferentes argumentos
+    suma(intOp1, intOp2);
+    suma("4", "6");
+    suma(3, 4, 5);
+
+    // Llamadas a la función multiplicacion
+    multiplicacion();       // usa valores por defecto
+    multiplicacion(3, 4);   // usa valores dados
+  </script> 
+</body>
+</html>
+

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Aproximación de e^x con serie de Taylor</title>
+</head>
+<body>
+  <p></p>
+
+  <script>
+    /* ============================
+       Declaración de funciones
+       ============================ */
+
+    // Factorial recursivo: n! (con caso base para 0 y 1)
+    function factorial(n) {
+      if (n === 0 || n === 1) return 1;
+      return n * factorial(n - 1);
+    }
+
+    // Potencia recursiva: base^exp
+    function potencia(base, exp) {
+      if (exp === 0) return 1;
+      if (exp === 1) return base;
+      return base * potencia(base, exp - 1);
+    }
+
+    // Suma parcial de la serie de e^x: sum_{k=0..n} x^k / k!
+    function aproximacion(x, n) {
+      if (n === 0) return 1;
+      return potencia(x, n) / factorial(n) + aproximacion(x, n - 1);
+    }
+
+    /* ============================
+       Uso de las funciones
+       ============================ */
+
+    // Entrada de datos
+    const nInput = prompt("Ingresa n (entero >= 0)");
+    const xInput = prompt("Ingresa x (real)");
+
+    // Conversión y validación
+    const n = parseInt(nInput, 10);
+    const x = parseFloat(xInput);
+
+    if (Number.isNaN(n) || n < 0 || !Number.isFinite(n)) {
+      alert("Valor de n inválido. Debe ser un entero >= 0.");
+    } else if (Number.isNaN(x) || !Number.isFinite(x)) {
+      alert("Valor de x inválido. Debe ser un número real.");
+    } else {
+      const r = aproximacion(x, n);
+      // Mostrar resultado con 10 decimales para una salida amigable
+      alert("Aproximación de e^x con n términos: " + r.toFixed(10));
+      console.log({ x, n, resultado: r });
+    }
+  </script>
+</body>
+</html>

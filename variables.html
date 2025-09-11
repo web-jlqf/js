@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ejemplo con variables en JavaScript</title>
+</head>
+<body>
+  <!-- Párrafo vacío -->
+  <p></p>
+
+  <!-- Bloque de JavaScript -->
+  <script>
+    // Declaración de variables
+    var cad = "Soy una cadena"; // cadena de texto
+    var x;                      // variable declarada pero no inicializada
+    var b = false;              // valor booleano
+
+    // Comentario: arreglo de cadenas
+    var dias = ["Lunes", "Martes", "Miércoles", "Jueves", "Viernes"];
+
+    // Asignación de número entero a b
+    b = 0;
+
+    // Salidas en consola
+    console.log(cad);   // imprime la cadena
+    console.log(x);     // imprime undefined (no tiene valor asignado)
+    console.log(b);     // imprime 0
+    console.log(dias);  // imprime el arreglo de días
+
+    // Esto generará un error ReferenceError, 
+    // ya que 'p' no está definido en el script
+    console.log(p);
+  </script> 
+</body>
+</html>
