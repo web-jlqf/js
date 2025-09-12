@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Calculadora básica</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1 class="title">Calculadora</h1>
+
+      <form id="calc-form" class="form" action="javascript:void(0)" autocomplete="off">
+        <label class="row">
+          <span>Número A</span>
+          <input type="number" id="a" step="any" placeholder="p. ej., 12.5" required>
+        </label>
+
+        <label class="row">
+          <span>Número B</span>
+          <input type="number" id="b" step="any" placeholder="p. ej., 3" required>
+        </label>
+
+        <div class="actions">
+          <!-- El formulario ya indica qué función JS ejecutar -->
+          <button type="button" class="btn" onclick="calcAdd()">A + B</button>
+          <button type="button" class="btn" onclick="calcSub()">A − B</button>
+          <button type="button" class="btn" onclick="calcMul()">A × B</button>
+          <button type="button" class="btn" onclick="calcDiv()">A ÷ B</button>
+          <button type="reset" class="btn ghost">Limpiar</button>
+        </div>
+
+        <label class="row">
+          <span>Resultado</span>
+          <input type="text" id="result" placeholder="—" readonly>
+        </label>
+
+        <p id="msg" class="msg" aria-live="polite"></p>
+      </form>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
