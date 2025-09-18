@@ -34,9 +34,9 @@
 
     // base^exp (versión iterativa)
     function potencia(base, exp) {
+      let pot = 1;
       if (exp === 0) 
           return 1;
-      let pot = 1;
       for (let i = 1; i <= exp; i++) 
           pot *= base;
       return pot;
@@ -74,7 +74,9 @@
 
       const r = aproximacion(n, x);
       document.getElementById("output").value = r.toFixed(10);
-      console.log({ n, x, resultado: r });
+      let obj={ n, x, resultado: r }
+      console.log(obj);
+      console.log(obj.n,obj.x,obj.resultado);
     }
   </script>
 </body>
