@@ -9,16 +9,22 @@
 
 function calcAdd(){
   // TODO: sumar A + B y mostrar en #result
+  let a=document.getElementById("a").value;
+  let b=document.getElementById("b").value;
+  console.log("Suma "+a+" "+b)
 }
 
 function calcSub(){
   // TODO: restar A - B y mostrar en #result
+  console.log("Resta")
 }
 
 function calcMul(){
   // TODO: multiplicar A * B y mostrar en #result
+  console.log("Multiplicación")
 }
 
 function calcDiv(){
   // TODO: dividir A / B (validar B != 0) y mostrar en #result
+  console.log("División")
 }
