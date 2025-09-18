@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Productos (Agregar y Eliminar)</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="wrap">
+    <section class="card">
+      <h1 class="title">Alta de productos</h1>
+
+      <!-- Formulario -->
+      <form id="product-form" class="form" autocomplete="off">
+        <div class="row">
+          <span>Nombre del producto</span>
+          <input type="text" id="name" placeholder="p. ej., Cuaderno A5" required />
+        </div>
+
+        <div class="row">
+          <span>Precio (MXN)</span>
+          <input type="number" id="price" placeholder="p. ej., 39.90" step="0.01" min="0" required />
+        </div>
+
+        <div class="row">
+          <span>Cantidad</span>
+          <input type="number" id="qty" placeholder="p. ej., 3" step="1" min="1" required />
+        </div>
+
+        <div class="actions">
+          <button type="submit" class="btn">Agregar</button>
+          <button type="reset" class="btn ghost">Limpiar</button>
+        </div>
+
+        <p id="msg" class="msg" aria-live="polite"></p>
+      </form>
+    </section>
+
+    <section class="card">
+      <h2 class="title">Listado</h2>
+
+      <div class="table-wrap">
+        <table class="table" id="products-table">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Precio</th>
+              <th>Cantidad</th>
+              <th>Total</th>
+              <th><!-- acciones --></th>
+            </tr>
+          </thead>
+          <tbody>
+            <!-- Filas dinámicas aquí -->
+          </tbody>
+          <tfoot>
+            <tr>
+              <td colspan="3" class="tfoot-label">Gran total</td>
+              <td id="grand-total">$0.00</td>
+              <td></td>
+            </tr>
+          </tfoot>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>

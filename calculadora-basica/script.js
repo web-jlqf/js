@@ -48,5 +48,26 @@ function initCalculator() {
   });
 }
 
+function initCalculator2(){
+  keys.addEventListener("click", function (event) {
+    if (event.target.matches("button")) {
+      const key = event.target.dataset.key;
+      handleKey(key);
+    }
+  });
+}
+
+function onKeysClick(event){
+    if (event.target.matches("button")) {
+      const key = event.target.dataset.key;
+      handleKey(key);
+    }
+}
+
+function initCalculator3() {
+  keys.addEventListener("click", onKeysClick);
+}
+
+
 // Inicializar al cargar
-initCalculator();
+initCalculator3();

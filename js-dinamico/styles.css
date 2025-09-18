@@ -1,0 +1,71 @@
+body {
+  font-family: Arial, sans-serif;
+  background: #f0f4ff;
+  margin: 20px;
+}
+
+#contenedor {
+  max-width: 400px;
+  margin: auto;
+  padding: 12px;
+  background: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+}
+
+#titulo {
+  text-align: center;
+  color: #2563eb;
+}
+
+#formulario {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+#input-texto {
+  flex: 1;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  box-sizing: border-box;
+}
+
+#btn-agregar {
+  padding: 8px 12px;
+  border: none;
+  border-radius: 6px;
+  background: #2563eb;
+  color: white;
+  cursor: pointer;
+}
+
+#btn-agregar:hover {
+  background: #1d4ed8;
+}
+
+#lista {
+  list-style: none;
+  padding: 0;
+}
+
+#lista li {
+  display: flex;
+  justify-content: space-between;
+  padding: 6px;
+  border-bottom: 1px solid #eee;
+}
+
+.btn-eliminar {
+  background: #ef4444;
+  color: white;
+  border: none;
+  padding: 4px 8px;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.btn-eliminar:hover {
+  background: #dc2626;
+}
