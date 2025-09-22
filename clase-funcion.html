@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo con función constructora</title>
+</head>
+<body>
+
+  <!-- Formulario -->
+  <form action="javascript:getDatos();" id="info">
+    Nombre:
+    <input type="text" placeholder="p.e. Juan" id="input-nombre" required />
+    <br><br>
+
+    Fecha de nacimiento:
+    <input type="date" id="input-fecha" required />
+    <br><br>
+
+    Correo:
+    <input type="email" placeholder="juan@gmail.com" id="input-correo" required />
+    <br><br>
+
+    <input type="submit" value="Enviar" />
+  </form>
+
+  <script>
+    // Variable global para guardar el contacto
+    var contacto;
+
+    // Función constructora Contacto
+    function Contacto(nombre, fecha, correo) {
+      this.nombre = nombre;
+      this.fecha = fecha;
+      this.correo = correo;
+
+      // Métodos "get"
+      this.getNombre = function () {
+        return this.nombre;
+      };
+      this.getFecha = function () {
+        return this.fecha;
+      };
+      this.getCorreo = function () {
+        return this.correo;
+      };
+
+      // Métodos "set"
+      this.setNombre = function (nombre) {
+        this.nombre = nombre;
+      };
+      this.setFecha = function (fecha) {
+        this.fecha = fecha;
+      };
+      this.setCorreo = function (correo) {
+        this.correo = correo;
+      };
+    }
+
+    // Función que obtiene datos del formulario
+    function getDatos() {
+      let form = document.getElementById("info");
+
+      // Crear el objeto con los valores del formulario
+      contacto = new Contacto(form[0].value, form[1].value, form[2].value);
+
+      // Mostrar en consola
+      console.log(contacto.getNombre());
+      console.log(contacto.getFecha());
+      console.log(contacto.getCorreo());
+      console.log(contacto);
+    }
+  </script>
+
+</body>
+</html>
+

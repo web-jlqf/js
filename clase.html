@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo de clase Contacto</title>
+</head>
+<body>
+
+  <!-- Formulario para capturar datos -->
+  <form action="javascript:getDatos();" id="info">
+    Nombre:
+    <input type="text" placeholder="p.e. Juan" id="input-nombre" required />
+    <br><br>
+
+    Fecha de nacimiento:
+    <input type="date" id="input-fecha" required />
+    <br><br>
+
+    Correo:
+    <input type="email" placeholder="juan@gmail.com" id="input-correo" required />
+    <br><br>
+
+    <input type="submit" value="Enviar" />
+  </form>
+
+  <script>
+    // Variable global para almacenar un contacto
+    var contacto;
+
+    // Clase Contacto con atributos, getters, setters y método toString
+    class Contacto {
+      constructor(nombre, fecha, correo) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+        this.correo = correo;
+      }
+
+      // Getters
+      get getNombre() {
+        return this.nombre;
+      }
+      get getFecha() {
+        return this.fecha;
+      }
+      get getCorreo() {
+        return this.correo;
+      }
+
+      // Setters
+      set setNombre(nombre) {
+        this.nombre = nombre;
+      }
+      set setFecha(fecha) {
+        this.fecha = fecha;
+      }
+      set setCorreo(correo) {
+        this.correo = correo;
+      }
+
+      // Método para representar el objeto como cadena
+      toString() {
+        return this.nombre + "," + this.fecha + "," + this.correo;
+      }
+    }
+
+    // Función que obtiene los datos del formulario y crea un objeto Contacto
+    function getDatos() {
+      let form = document.getElementById("info");
+
+      // Crear objeto Contacto con los valores del formulario
+      contacto = new Contacto(form[0].value, form[1].value, form[2].value);
+
+      // Mostrar en consola
+      console.log(contacto.getNombre);
+      console.log(contacto.getFecha);
+      console.log(contacto.getCorreo);
+      console.log(contacto.toString());
+      console.log(contacto);
+    }
+  </script>
+
+</body>
+</html>

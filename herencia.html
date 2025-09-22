@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo de Herencia en JS</title>
+</head>
+<body>
+
+  <!-- Formulario -->
+  <form action="javascript:getDatos();" id="info">
+    Nombre:
+    <input type="text" placeholder="p.e. Juan" id="input-nombre" required />
+    <br><br>
+
+    Fecha de nacimiento:
+    <input type="date" id="input-fecha" required />
+    <br><br>
+
+    Correo:
+    <input type="email" placeholder="juan@gmail.com" id="input-correo" required />
+    <br><br>
+
+    <input type="submit" value="Enviar" />
+  </form>
+
+  <script>
+    // Variable global
+    var contacto;
+
+    // Clase base Persona
+    class Persona {
+      constructor(nombre, fecha) {
+        this.nombre = nombre;
+        this.fecha = fecha;
+      }
+
+      // Métodos get
+      get getNombre() {
+        return this.nombre;
+      }
+      get getFecha() {
+        return this.fecha;
+      }
+
+      // Métodos set
+      set setNombre(nombre) {
+        this.nombre = nombre;
+      }
+      set setFecha(fecha) {
+        this.fecha = fecha;
+      }
+    }
+
+    // Clase hija Contacto que extiende de Persona
+    class Contacto extends Persona {
+      constructor(nombre, fecha, correo) {
+        super(nombre, fecha); // Llama al constructor de Persona
+        this.correo = correo;
+      }
+
+      // Métodos get y set adicionales
+      get getCorreo() {
+        return this.correo;
+      }
+      set setCorreo(correo) {
+        this.correo = correo;
+      }
+    }
+
+    // Función para capturar datos del formulario
+    function getDatos() {
+      let form = document.getElementById("info");
+
+      contacto = new Contacto(form[0].value, form[1].value, form[2].value);
+
+      // Mostrar datos en consola
+      console.log(contacto.getNombre);
+      console.log(contacto.getFecha);
+      console.log(contacto.getCorreo);
+      console.log(contacto);
+    }
+  </script>
+
+</body>
+</html>
+
