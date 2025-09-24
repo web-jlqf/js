@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo document.forms</title>
+</head>
+<body>
+
+  <form id="frm1">
+    Nombre: <input type="text" name="fnombre" value="Hola"><br>
+    Apellido: <input type="text" name="lnombre" value="Mundo"><br><br>
+    <input type="submit" value="Enviar">
+  </form> 
+
+  <p>Dar click en "Presionar aqui!".</p>
+
+  <button onclick="getDatos()">Presionar aqui!</button>
+
+  <p id="demo"></p>
+
+  <script>
+    function getDatos() {
+      // Obtenemos el formulario usando su id
+      var x = document.forms["frm1"];
+      var text = "";
+
+      // Recorremos todos los elementos del formulario
+      for (var i = 0; i < x.length; i++) {
+        text += x.elements[i].value + "<br>";
+      }
+
+      // Mostramos los valores en el párrafo con id "demo"
+      document.getElementById("demo").innerHTML = text;
+    }
+  </script>
+
+</body>
+</html>

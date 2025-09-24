@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Cambiar imagen con JavaScript</title>
+</head>
+<body>
+
+  <!-- Imagen inicial -->
+  <img id="image" src="paisaje1.png" width="50%">
+
+  <!-- Botón que ejecuta la función setCambiar() -->
+  <button onclick="setCambiar()">Presionar aqui!</button>
+
+  <script>
+    // Cambiamos la propiedad src de la imagen con id "image"
+    function setCambiar() {
+      document.getElementById("image").src = "paisaje2.png";
+    }
+  </script>
+
+  <p>
+    La imagen original es <b>paisaje1.png</b>, pero puede ser cambiada por
+    <b>paisaje2.png</b>.
+  </p>
+
+</body>
+</html>

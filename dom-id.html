@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo getElementById</title>
+</head>
+<body>
+
+  <p id="intro">Hola Mundo!</p>
+  <p>
+    Obtiene un elemento por el método <b>getElementById</b>
+  </p>
+  <p id="demo"></p>
+
+  <script>
+    // Obtenemos el elemento con id "intro"
+    var elemento = document.getElementById("intro");
+
+    // Mostramos su contenido en el elemento con id "demo"
+    document.getElementById("demo").innerHTML =
+      "El texto del elemento es: " + elemento.innerHTML;
+  </script>
+
+</body>
+</html>

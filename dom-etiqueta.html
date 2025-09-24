@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo getElementsByTagName</title>
+</head>
+<body>
+
+  <p>Hola Mundo!</p>
+  <p>El DOM es muy útil.</p>
+  <p>
+    Este ejemplo demuestra el método <b>getElementsByTagName</b>
+  </p>
+
+  <p id="demo"></p>
+
+  <script>
+    // Obtenemos todos los elementos <p> del documento
+    var x = document.getElementsByTagName("p");
+
+    // Mostramos el contenido del primer párrafo (índice 0)
+    document.getElementById("demo").innerHTML =
+      "El primer párrafo (índice 0) es: " + x[0].innerHTML;
+  </script>
+
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Ejemplo getElementsByClassName</title>
+</head>
+<body>
+
+  <p>Hola Mundo!</p>
+  <p class="intro">Buscando por clase.</p>
+  <p class="intro">
+    Ejemplo del método <b>getElementsByClassName</b>
+  </p>
+
+  <p id="demo"></p>
+
+  <script>
+    // Obtenemos todos los elementos que tienen la clase "intro"
+    var x = document.getElementsByClassName("intro");
+
+    // Mostramos el contenido del primer párrafo con esa clase
+    document.getElementById("demo").innerHTML =
+      'El primer párrafo (índice 0) con clase="intro": ' + x[0].innerHTML;
+  </script>
+
+</body>
+</html>
